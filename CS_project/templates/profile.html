@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ user.username }}'s Profiili</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .profile-info {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 4px;
+            width: 300px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ user.username }}'s Profiili</h1>
+    <div class="profile-info">
+        <strong>Käyttäjänimi:</strong> {{ user.username }}<br>
+        <strong>Email:</strong> {{ user.email }}<br>
+    </div>
+</body>
+</html>
