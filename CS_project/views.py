@@ -84,7 +84,12 @@ def view_profile(request, user_id):
     # Assuming that the MyUser model does not contain sensitive information like plaintext passwords.
     # It's crucial here to ensure only necessary details are shown.
     user = MyUser.objects.get(pk=user_id)
-    return render(request, 'profile.html', {'user': user})
+    safe_data = {
+    'username': user.username,
+    'first_name': user.first_name,
+    'last_name': user.last_name,
+    }
+    return render(request, 'profile.html', {'user': safe_data})
 
 
 
