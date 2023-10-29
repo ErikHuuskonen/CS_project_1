@@ -15,13 +15,13 @@ git clone [copied URL]
 For example:
 
 ```bash
-git clone https://github.com/username/project_name.git
+git clone https://github.com/username/CS_project_1.git
 ```
 
 ## Navigate to the Project Folder
 
 ```bash
-cd project_name
+cd CS_project_1
 ```
 
 ## Create a Virtual Environment (recommended)
