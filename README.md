@@ -9,13 +9,7 @@ This is the project 1 for the University of Helsinki's Cyber Security Base 2023 
 3. Open your command line or terminal and type:
 
 ```bash
-git clone [copied URL]
-```
-
-For example:
-
-```bash
-git clone https://github.com/username/CS_project_1.git
+git clone https://github.com/ErikHuuskonen/CS_project_1.git
 ```
 
 ## Navigate to the Project Folder
@@ -41,8 +35,6 @@ python -m venv venv
 ```
 
 ## Install Required Dependencies
-
-Make sure you have a `requirements.txt` file in your repository that contains all the necessary packages.
 
 ```bash
 pip install -r requirements.txt
@@ -71,4 +63,4 @@ Press `Ctrl + C` in your command line or terminal.
 ```bash
 deactivate
 ```
-Please ensure to replace placeholders like [copied URL], username, and project_name with your actual values before saving and publishing.
+
