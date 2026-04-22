@@ -10,6 +10,9 @@
 
 <div style="width: 300px; margin: 50px auto; padding: 20px; border: 1px solid #ccc;">
     <h2>Login</h2>
+    {% if error %}
+    <p style="color: #b00020;">{{ error }}</p>
+    {% endif %}
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         <div style="margin-bottom: 10px;">
@@ -22,6 +25,7 @@
         </div>
         <input type="submit" value="Login">
     </form>
+    <p style="margin-top: 14px;"><a href="{% url 'search_user' %}">Go to user search</a></p>
 </div>
 
 </body>

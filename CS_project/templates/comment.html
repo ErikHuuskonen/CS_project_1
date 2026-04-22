@@ -18,6 +18,20 @@
         </div>
         <input type="submit" value="Submit Comment">
     </form>
+
+    <hr style="margin-top: 30px;">
+    <h3>Recent Comments (UNSAFE - no escaping):</h3>
+    {% if comments %}
+    <ul style="border-left: 3px solid red; padding-left: 15px; margin-top: 10px;">
+        {% for item in comments %}
+        <li style="margin-bottom: 10px; background-color: #ffe0e0; padding: 8px;">
+            {{ item.comment|safe }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No comments yet.</p>
+    {% endif %}
 </div>
 
 </body>
