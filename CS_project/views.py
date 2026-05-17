@@ -60,26 +60,12 @@ def login(request):
             #return HttpResponse("Invalid username or password.")
     #return render(request, 'login.html')
 
-#-------------------------------------- flaw 3:
+#-------------------------------------- flaw 4:
 
-# OWASP A01: Broken Access Control
-# Vulnerability: This function allows any user to view the details of all users in the system.
 def show_users(request):
     users = MyUser.objects.all()
     return render(request, 'users.html', {'users': users})
-    
-# Fix: Implement access control checks to ensure only authorized users (e.g., administrators) can view all user details.
-#if not request.user.is_authenticated or not request.user.is_staff:
-#return HttpResponse("Ei oikeutta näyttää kaikkia käyttäjiä.")
-#fixed:
-# Fixed: Added access control so only staff can view all user details.
-#def show_users(request):
-    #if not request.user.is_authenticated or not request.user.is_staff:
-        #return HttpResponse("No permission to view all users.")
-    #users = MyUser.objects.all()
-    #return render(request, 'users.html', {'users': users})
 
-#-------------------------------------- flaw 4:
 
 # OWASP A01: Broken Access Control (IDOR)
 # Vulnerability: Any user can open any profile by changing user_id in the URL.

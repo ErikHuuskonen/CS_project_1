@@ -22,11 +22,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-@&$h(2(=d+%(bj1z$l$=s4u9b55g9okkie5kp$2cm#obev(4-g'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+#-------------------------------------- flaw 3:
+
+# OWASP A05: Security Misconfiguration
+# Vulnerability: Debug mode is enabled and all hosts are allowed.
+# This is dangerous in production because Django may expose sensitive error
+# information, and ALLOWED_HOSTS = ["*"] allows requests from any host.
+
 DEBUG = True
+ALLOWED_HOSTS = ["*"]
 
-ALLOWED_HOSTS = []
+#fixed:
+#DEBUG = False
+#ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
+#-------------------------------------- 
 
 # Application definition
 
